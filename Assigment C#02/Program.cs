@@ -1,5 +1,11 @@
-﻿namespace Assigment_C_02
+﻿
+namespace Assigment_C_02
 {
+        class Point
+    {
+        public int x; 
+        public int y;
+    }
     internal class Program
     {
         static void Main(string[] args)
@@ -30,6 +36,29 @@
 
             //Console.WriteLine($"The value of x is : {x}");
             //Console.WriteLine($"The value of y is : {y}");
+
+
+            #endregion
+
+            #region Q3
+            //Q3.Write C# program that Assigning one reference type variable to another
+            //and modifying the object through one variable and mention what will happen
+
+
+            Point P1;
+            // Declare for reference from point , refer null 
+            //Allocate 4 bytes at stack
+            P1 = new Point();
+            // allocate require bytes at heap , 8bytes 
+            P1.x = 1;
+            P1.y = 2;
+
+            Point P2 = new Point(); // unreachable object 
+            P2 = P1;
+            
+            //if there is change at value of p2 p1 will have same change also if p1 have changes
+            //p2 will have  the same because p1 and p2 refere for same location at heap  
+
 
 
             #endregion
